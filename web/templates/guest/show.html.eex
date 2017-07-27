@@ -1,0 +1,32 @@
+<h2>Show guest</h2>
+
+<ul>
+  <li>
+    <strong>Status:</strong>
+    <%= @guest.status %>
+  </li>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @guest.name %>
+  </li>
+
+  <li>
+    <strong>Email:</strong>
+    <%= @guest.email %>
+  </li>
+
+  <li>
+    <strong>Phone:</strong>
+    <%= @guest.phone %>
+  </li>
+
+  <li>
+    <strong>Additional guests:</strong>
+    <%= @guest.additional_guests %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: guest_path(@conn, :edit, @guest) %> &nbsp;&nbsp;
+<%= link "Back", to: guest_path(@conn, :index) %>

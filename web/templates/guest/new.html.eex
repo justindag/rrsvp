@@ -1,0 +1,12 @@
+<h2>New Guest</h2>
+
+<div class="col-sm-7">
+    <%= content_tag :div, id: "event",
+    data: [id: @event.id] do %>
+    <% end %>
+</div>
+
+<%= render "form.html", changeset: @changeset,
+                        action: guest_path(@conn, :create) %>
+
+<%= link "Back", to: guest_path(@conn, :index) %>

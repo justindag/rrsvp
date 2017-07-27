@@ -1,0 +1,34 @@
+<h2>Listing guests</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Status</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Additional guests</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for guest <- @guests do %>
+    <tr>
+      <td><%= guest.name %></td>
+      <td><%= guest.status %></td>
+      <td><%= guest.email %></td>
+      <td><%= guest.phone %></td>
+      <td><%= guest.additional_guests %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: guest_path(@conn, :show, guest), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: guest_path(@conn, :edit, guest), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: guest_path(@conn, :delete, guest), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New guest", to: guest_path(@conn, :new) %>

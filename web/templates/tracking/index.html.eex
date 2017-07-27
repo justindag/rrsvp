@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="col-sm-7">
+    <%= content_tag :div, id: "event",
+    data: [id: @event.id] do %>
+    <% end %>
+  </div>
+  <h2><%= @event.name %> Guest List</h2>
+  <div class="row">
+    <div>
+      <%= content_tag :div, id: "event",
+      data: [id: @event.id] do %>
+      <% end %>
+    </div>
+    <div>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Guests</h3>
+        </div>
+        <div id="guest-container" class="panel-body">
+
+        </div>
+      </div>
+    </div>
+  </div>
