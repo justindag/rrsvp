@@ -60,8 +60,9 @@ config :logger, level: :info
 # Finally import the config/prod.secret.exs
 # which should be versioned separately.
 # for heroku
-config :rrsvp, Guests.Repo,
-  adapter: Ecto.Adapters.Postgres,
-  url: System.get_env("DATABASE_URL"),
-  pool_size: System.get_env("POOL_SIZE") || "10"
+#config :guests, Guests.Repo,
+#  adapter: Ecto.Adapters.Postgres,
+#  url: System.get_env("DATABASE_URL"),
+#  pool_size: System.get_env("POOL_SIZE") || "10"
 
+import_config "config.prod.secret.exs"
