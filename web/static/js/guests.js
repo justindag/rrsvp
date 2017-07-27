@@ -38,7 +38,7 @@ let Guest = {
 
     // receive reply
     repliesChannel.on("new:reply", (resp) => {
-      console.log("NEW REPLY: "+JSON.stringify(resp));
+      // console.log("NEW REPLY: "+JSON.stringify(resp));
       repliesChannel.params.last_seen_id = resp.id;
       this.renderGuest(guestsContainer, resp)
     });
@@ -51,12 +51,7 @@ let Guest = {
 
         // let ids = resp.guests.map(g => g.id);
         // if (ids.length > 0) { repliesChannel.params.last_seen_id = Math.max(...ids) }
-
-        // render guest list
-
-
-        // this.scheduleMessages(guestsContainer, resp.annotations)
-      })
+     })
       .receive("error", reason => console.log("join failed", reason) )
   },
 
@@ -65,7 +60,6 @@ let Guest = {
       let template = document.createElement("div");
       template.innerHTML = `<b>${this.esc(name)}</b>: ${this.esc(status)}`;
       msgContainer.insertBefore(template, msgContainer.firstChild);
-      // msgContainer.prependChild(template);
       msgContainer.scrollTop = msgContainer.scrollHeight
     }
   },

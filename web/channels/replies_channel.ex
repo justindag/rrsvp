@@ -5,7 +5,7 @@ defmodule Guests.RepliesChannel do
   alias Guests.API.V1.GuestView
   alias Guests.{Repo, Guest}
 
-  def join("replies:" <> event_id, params, socket) do
+  def join("replies:" <> event_id, _params, socket) do
     IO.puts "-------------- JOIN -- Event ID: #{event_id}"
 #    last_seen_id = params["last_seen_id"] || 0
 

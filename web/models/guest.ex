@@ -9,7 +9,7 @@ defmodule Guests.Guest do
     field :additional_guests, :integer
     field :event_id, :string
     field :account_id, :string
-    timestamps
+    timestamps()
   end
 
   @doc """

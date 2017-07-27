@@ -6,7 +6,10 @@ defmodule Guests.UserSocket do
   channel "replies:*", Guests.RepliesChannel
 
   ## Transports
-  transport :websocket, Phoenix.Transports.WebSocket, timeout: 45_000
+  transport :websocket, Phoenix.Transports.WebSocket, check_origin: [
+                                                          "//174.138.43.1", "//metl.io",
+                                                          "//localhost"
+                                                        ]
   # transport :longpoll, Phoenix.Transports.LongPoll
 
   # Socket params are passed from the client and can

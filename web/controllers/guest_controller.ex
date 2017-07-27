@@ -16,7 +16,7 @@ defmodule Guests.GuestController do
     render(conn, "new.html", event: event, changeset: changeset)
   end
 
-  def create(conn, %{"guest" => guest_params}) do
+  def create(conn, %{"guest" => _guest_params}) do
     conn |> redirect(to: guest_path(conn, :index))
   end
 
